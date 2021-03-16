@@ -72,7 +72,6 @@
       $("#website").text("Website: Not available");
     } else {
       $("#website").text("Website: " + website);
-      $("#website").setAttribute("href", website);
     }
     var phone = e.target.feature.properties.phone_number_to_place_an_order;
     if (phone == null) {
