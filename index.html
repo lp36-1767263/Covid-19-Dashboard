@@ -45,7 +45,7 @@
 
   var Stadia_OSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png?api_key=abf221d4-653f-4f29-8754-6cac89257ce2', {
 	maxZoom: 20,
-	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://data-seattlecitygis.opendata.arcgis.com/">Seattle Geo Data</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://data-seattlecitygis.opendata.arcgis.com/">Seattle Geo Data</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, Made by Lizhi Peng'
   });
   Stadia_OSMBright.addTo(mymap);
 
@@ -83,7 +83,7 @@
     $("#availability").text("Open for: " + e.target.feature.properties.are_you_open_for.replace(/_/g, ' '));
     var notes = e.target.feature.properties.provide_details_for_you_busines;
     if (notes == null) {
-      $("notes").text();
+      $("notes").text("");
     } else {
       $("#notes").text("Notes: " + notes);
     }
