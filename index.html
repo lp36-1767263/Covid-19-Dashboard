@@ -83,7 +83,7 @@
     $("#availability").text("Open for: " + e.target.feature.properties.are_you_open_for.replace(/_/g, ' '));
     var notes = e.target.feature.properties.provide_details_for_you_busines;
     if (notes == null) {
-      $("notes").text("");
+      $("#notes").text("");
     } else {
       $("#notes").text("Notes: " + notes);
     }
