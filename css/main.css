@@ -8,11 +8,11 @@ html, body, #map {
 #info {
   z-index: 1000;
   position: absolute;
-  width: 500px;
+  width: 25%;
   top: 1%;
   bottom: 1%;
   left: .5%;
-  padding: 40px 15px 900px 15px;
+  padding: 40px 15px 40px 15px;
   background: #343a40;
   color: white;
 
@@ -64,17 +64,17 @@ html, body, #map {
   font-weight: bold;
 }
 
-#date {
-  margin:0;
-  text-align: center;
-  color: orange;
-  font-size: 50px;
-}
-
 #footer {
   margin-top: 50px;
   margin-right: 10px;
   font-size: 13px;
   line-height: 150%;
   color: lightgray;
+}
+
+#date {
+  margin:0;
+  text-align: center;
+  color: orange;
+  font-size: 50px;
 }

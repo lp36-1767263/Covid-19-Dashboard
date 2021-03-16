@@ -17,7 +17,7 @@
   <div id="info">
 
     <div id="title">Operating During Covid-19</div>
-    <div id="placename">Name</div>
+    <div id="placename">Restaurant Name</div>
     <div id="details" class="card">
       <h5 id="phone">Phone:</h5>
       <h5 id="website">Website:</h5>
@@ -25,7 +25,7 @@
       <p id="availability">Open for:</p>
       <p id="notes"></p>
     </div>
-    <p id="date"></p>
+    <div id="footer">This interactive dashboard is made by <a href="https://github.com/lp36-1767263">Lizhi Peng</a>with the <a href="https://leafletjs.com/">Leaflet</a> plugin, based on the <a href="https://github.com/jakobzhao/geog458/tree/master/weeks/week06">template</a> by Professor <a href="https://github.com/jakobzhao">Bo Zhao</a> at University of Washington</a>, with data provided by <a href="https://data-seattlecitygis.opendata.arcgis.com/">Seattle Geo Data</a></div>
   </div>
   <!-- mainwindow -->
   <div id="map">
@@ -43,19 +43,15 @@
     position: 'topright'
   }).addTo(mymap);
 
-
   var Stadia_OSMBright = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
 	maxZoom: 20,
-	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://data-seattlecitygis.opendata.arcgis.com/">Seattle Geo Data</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
   });
   Stadia_OSMBright.addTo(mymap);
-var countiesLayer = null,
-  bchart = null,
-  counties = {};
 
   Promise.all([$.getJSON("https://opendata.arcgis.com/datasets/32d35b66d9a54db7a7f489d34a86f603_0.geojson")]).then(function(datasets) {
 
-    countiesLayer = L.geoJSON(datasets[0], {
+    restaurants = L.geoJSON(datasets[0], {
       onEachFeature: onEachFeature
     }).addTo(mymap);
 
@@ -76,12 +72,14 @@ var countiesLayer = null,
       $("#website").text("Website: Not available");
     } else {
       $("#website").text("Website: " + website);
+      $("#website").setAttribute("href", website);
     }
     var phone = e.target.feature.properties.phone_number_to_place_an_order;
     if (phone == null) {
       $("#phone").text("Phone: Not available");
+    } else {
+      $("#phone").text("Phone: " + phone);
     }
-    $("#phone").text("Phone: " + phone);
     $("#address").text("Address: " + e.target.feature.properties.address_help_your_customer_find);
     $("#availability").text("Open for: " + e.target.feature.properties.are_you_open_for.replace(/_/g, ' '));
     var notes = e.target.feature.properties.provide_details_for_you_busines;
