@@ -9,14 +9,13 @@ html, body, #map {
   z-index: 1000;
   position: absolute;
   width: 25%;
-  height: 50%;
+  height: auto;
   top: 1%;
-  bottom: 1%;
   left: .5%;
   padding: 40px 15px 40px 15px;
   background: #343a40;
   color: white;
-  overflow-y: scroll;
+  overflow: scroll;
 }
 
 @media only screen and (max-width: 1026px) {
@@ -26,22 +25,22 @@ html, body, #map {
 }
 
 #info a {
-  color: lightgray;
+  color: lightblue;
 }
 
 #info a:hover {
-  color: white;
+  color: blue;
   opacity: 0.3;
 }
 
-#info h4 i {
-  font-size: 1.25e;
-  padding-right: 10px
+#info h4 {
+  font-size: 1.25em;
+  padding-right: 10px;
 }
 
 
 #title {
-  font-size: 25px;
+  font-size: 36px;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -53,16 +52,17 @@ html, body, #map {
 }
 
 #placename {
-  font-size: 40px;
+  font-size: 30px;
+  color: orange;
   font-family: 'Oswald', sans-serif;
 }
 
-/* card decks */
-#desc {
-  text-align: center;
-  color: lightgray;
-  font-size: medium;
-  font-weight: bold;
+#details {
+  background: #F3DFA2;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  color: black;
 }
 
 #footer {
@@ -73,9 +73,38 @@ html, body, #map {
   color: lightgray;
 }
 
-#date {
-  margin:0;
-  text-align: center;
-  color: orange;
-  font-size: 50px;
+.row {
+  padding-top: 10px;
+}
+
+.row h4 {
+  display: inline;
+}
+
+.row a {
+  font-size: 1.25em;
+}
+
+.leaflet-tooltip {
+  font-size: 1.25em;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
