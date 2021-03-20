@@ -4,7 +4,7 @@ The Covid-19 pandemic has been going on for more than a year, following state gu
 
 
 Hovering over a marker shows a tooltip containing its name, clicking it zooms in on the location and displays the contact information(phone, website if available, address, dining options and any additional notes).
-![screenshot](img/screenshot_1.png)
+![screenshot](img/Screenshot_1.png)
 
 The Information panel can be moved around by dragging it across the screen to avoid blocking the map.
-![screenshot](img/screenshot_2.png)
+![screenshot](img/Screenshot_2.png)
